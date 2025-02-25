@@ -1,3 +1,17 @@
+/*
+Copyright 2025 Víctor Fernández Montaño
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+either express or implied. See the License for the specific
+language governing permissions and limitations under the
+License.
+*/
+
 package pr2;
 
 import java.util.*;
@@ -12,8 +26,8 @@ public class Graph<V> {
 	 * @return ‘true‘ si no estaba anteriormente y ‘false‘ en caso
 	 * contrario.
 	 */
-	public boolean addVertex(V v){
-		if(this.adjacencyList.containsKey(v)){
+	public boolean addVertex(V v) {
+		if(this.adjacencyList.containsKey(v)) {
 			return false;
 		}
 		this.adjacencyList.put(v, new HashSet<V>());
@@ -30,7 +44,11 @@ public class Graph<V> {
 	 * @return ‘true‘ si no existía el arco y ‘false‘ en caso
 	contrario.
 	 */
-	public boolean addEdge(V v1, V v2){
+	public boolean addEdge(V v1, V v2) {
+		this.addVertex(v1);
+		this.addVertex(v2);
+		this.adjacencyList.get(v1).add(v2);
+		this.adjacencyList.get(v2).add(v1);
 		return true;
 	}
 
@@ -40,7 +58,7 @@ public class Graph<V> {
 	 * @param v vértice del que se obtienen los adyacentes.
 	 * @return conjunto de vértices adyacentes.
 	 */
-	public Set<V> obtainAdjacents(V v) throws Exception{
+	public Set<V> obtainAdjacents(V v) throws Exception {
 		return null; //Este código hay que modificarlo.
 	}
 
@@ -50,7 +68,7 @@ public class Graph<V> {
 	 * @param v vértice para el que se realiza la comprobación.
 	 * @return ‘true‘ si ‘v‘ es un vértice del grafo.
 	 */
-	public boolean containsVertex(V v){
+	public boolean containsVertex(V v) {
 		return true; //Este código hay que modificarlo.
 	}
 
@@ -60,7 +78,7 @@ public class Graph<V> {
 	 * adyacencia.
 	 */
 	@Override
-	public String toString(){
+	public String toString() {
 		return ""; //Este código hay que modificarlo.
 	}
 
@@ -73,7 +91,7 @@ public class Graph<V> {
 	 * @return lista con la secuencia de vértices desde ‘v1‘ hasta
 	 * ‘v2‘ * pasando por arcos del grafo.
 	 */
-	public List<V> onePath(V v1, V v2){
+	public List<V> onePath(V v1, V v2) {
 		return null; //Este código hay que modificarlo.
 	}
 }
