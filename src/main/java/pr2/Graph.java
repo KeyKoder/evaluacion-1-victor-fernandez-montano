@@ -59,7 +59,7 @@ public class Graph<V> {
 	 * @return conjunto de vértices adyacentes.
 	 */
 	public Set<V> obtainAdjacents(V v) throws Exception {
-		return null; //Este código hay que modificarlo.
+		return this.adjacencyList.get(v);
 	}
 
 	/**
@@ -69,11 +69,11 @@ public class Graph<V> {
 	 * @return ‘true‘ si ‘v‘ es un vértice del grafo.
 	 */
 	public boolean containsVertex(V v) {
-		return true; //Este código hay que modificarlo.
+		return this.adjacencyList.containsKey(v);
 	}
 
 	/**
-	 * Método ‘toString()‘ reescrito para la clase ‘Grafo.java‘.
+	 * Metodo ‘toString()‘ reescrito para la clase ‘Grafo.java‘.
 	 * @return una cadena de caracteres con la lista de
 	 * adyacencia.
 	 */
