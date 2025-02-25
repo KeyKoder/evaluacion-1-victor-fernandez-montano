@@ -89,9 +89,39 @@ public class Graph<V> {
 	 * @param v1 el vértice origen.
 	 * @param v2 el vértice destino.
 	 * @return lista con la secuencia de vértices desde ‘v1‘ hasta
-	 * ‘v2‘ * pasando por arcos del grafo.
+	 * ‘v2‘ pasando por arcos del grafo.
 	 */
 	public List<V> onePath(V v1, V v2) {
-		return null; //Este código hay que modificarlo.
+		HashMap<V, V> traza = new HashMap<V, V>();
+		Stack<V> abierta = new Stack<>();
+		abierta.add(v1);
+		traza.put(v1, null);
+		boolean encontrado = false;
+		V v;
+		while(!abierta.isEmpty() && !encontrado) {
+			v = abierta.pop();
+			if(v.equals(v2)) {
+				encontrado = true;
+			}
+			if(!encontrado) {
+				for(V s : this.adjacencyList.get(v)) {
+					if(!traza.containsKey(s)) {
+						abierta.add(s);
+						traza.put(s, v);
+					}
+				}
+			}
+		}
+		if(encontrado) {
+			List<V> path = new ArrayList<>();
+			V current = v2;
+			path.add(current);
+			while(!current.equals(v1)) {
+				current = traza.get(current);
+				path.add(current);
+			}
+			return path.reversed();
+		}
+		return null;
 	}
 }
