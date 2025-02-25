@@ -63,6 +63,10 @@ public class Tablero {
 		this.generarEstadoSiguiente();
 	}
 
+
+	/**
+	 * Guarda el estado actual en un fichero llamado 'matriz'.
+	 */
 	public void guardarEstadoActual() {
 		try (FileWriter fw = new FileWriter(FILENAME)) {
 			for(int y = 0; y < DIMENSION; y++) {
@@ -76,11 +80,19 @@ public class Tablero {
 		}
 	}
 
+	/**
+	 * Transita al estado siguiente según las reglas del
+	 * juego de la vida.
+	 */
 	public void transitarAlEstadoSiguiente(){
 		this.estadoActual = this.estadoSiguiente;
 		this.generarEstadoSiguiente();
 	}
 
+	/**
+	 * Genera el estado siguiente según las reglas del
+	 * juego de la vida.
+	 */
 	private void generarEstadoSiguiente() {
 		int vecinos = 0;
 		this.estadoSiguiente = new int[DIMENSION][DIMENSION];
@@ -114,7 +126,6 @@ public class Tablero {
 					if(this.estadoActual[y+1][x] == 1) vecinos++;
 				}
 
-//				System.out.println(x + ", " + y + " -> " + vecinos + " (" + this.estadoActual[y][x] + ")");
 				if(this.estadoActual[y][x] == 1 && (vecinos == 2 || vecinos == 3)) {
 					this.estadoSiguiente[y][x] = 1;
 				} else if(this.estadoActual[y][x] == 0 && vecinos == 3) {
@@ -126,6 +137,10 @@ public class Tablero {
 		}
 	}
 
+	/**
+	 * Devuelve, en modo texto, el estado actual.
+	 * @return el estado actual.
+	 */
 	@Override
 	public String toString() {
 		String out = "";
