@@ -36,6 +36,7 @@ public class Tablero {
 		try (FileReader fr = new FileReader(FILENAME)) {
 			int chat = fr.read();
 			while(chat != -1) {
+				if(chat == '\r') continue;
 				if(chat == '\n') {
 					x = 0;
 					y++;
