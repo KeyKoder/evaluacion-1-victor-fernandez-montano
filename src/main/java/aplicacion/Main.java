@@ -16,6 +16,7 @@ package aplicacion;
 
 import dominio.Tablero;
 import mates.Matematicas;
+import pr2.Graph;
 
 import java.util.concurrent.TimeUnit;
 
@@ -33,6 +34,15 @@ public class Main {
 				break;
 			case "2":
 				hacerConway();
+				break;
+			case "3":
+				Graph<Integer> g = new Graph<>();
+				g.addEdge(1, 2);
+				g.addEdge(3, 4);
+				g.addEdge(1, 5);
+				g.addEdge(5, 6);
+				g.addEdge(6, 4);
+				g.onePath(1, 4).forEach(System.out::println);
 				break;
 			default:
 				break;
