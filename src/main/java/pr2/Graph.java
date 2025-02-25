@@ -79,7 +79,9 @@ public class Graph<V> {
 	 */
 	@Override
 	public String toString() {
-		return ""; //Este código hay que modificarlo.
+		StringBuilder sb = new StringBuilder();
+		this.adjacencyList.forEach((k, v) -> sb.append(k).append(" -> ").append(v.stream().map(Object::toString).reduce((a, b) -> a + ", " + b).get()).append("\n"));
+		return sb.toString().substring(0, sb.length() - 1);
 	}
 
 	/**

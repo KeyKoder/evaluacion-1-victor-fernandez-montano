@@ -42,6 +42,9 @@ public class Main {
 				g.addEdge(1, 5);
 				g.addEdge(5, 6);
 				g.addEdge(6, 4);
+				System.out.println("Grafo:");
+				System.out.println(g);
+				System.out.println("\nPath:");
 				g.onePath(1, 4).forEach(System.out::println);
 				break;
 			default:
