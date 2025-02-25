@@ -32,7 +32,7 @@ public class Tablero {
 	 */
 	public void leerEstadoActual() {
 		int x = 0, y = 0;
-		estadoActual = new int[DIMENSION][DIMENSION];
+		this.estadoActual = new int[DIMENSION][DIMENSION];
 		try (FileReader fr = new FileReader(FILENAME)) {
 			int chat = fr.read();
 			while(chat != -1) {
@@ -68,6 +68,7 @@ public class Tablero {
 	 * Guarda el estado actual en un fichero llamado 'matriz'.
 	 */
 	public void guardarEstadoActual() {
+		this.estadoActual = new int[DIMENSION][DIMENSION];
 		try (FileWriter fw = new FileWriter(FILENAME)) {
 			for(int y = 0; y < DIMENSION; y++) {
 				for(int x = 0; x < DIMENSION; x++) {
@@ -78,6 +79,21 @@ public class Tablero {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	/**
+	 * Genera un estado inicial aleatorio. Para cada celda
+	 * genera un número aleatorio en el intervalo [0, 1). Si
+	 * el número es menor que 0,5, entonces la celda está
+	 * inicialmente viva. En caso contrario, está muerta.
+	 */
+	public void generarEstadoActualPorMontecarlo() {
+		for(int y = 0; y < DIMENSION; y++) {
+			for(int x = 0; x < DIMENSION; x++) {
+				this.estadoActual[y][x] = Math.random() < 0.5 ? 1 : 0;
+			}
+		}
+		this.generarEstadoSiguiente();
 	}
 
 	/**
