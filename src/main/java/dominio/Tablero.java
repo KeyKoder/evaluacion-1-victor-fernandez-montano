@@ -36,6 +36,7 @@ public class Tablero {
 		try (FileReader fr = new FileReader(FILENAME)) {
 			int chat = fr.read();
 			while(chat != -1) {
+				if(chat == '\r') continue;
 				if(chat == '\n') {
 					x = 0;
 					y++;
@@ -162,7 +163,7 @@ public class Tablero {
 		String out = "";
 		for(int y = 0; y < DIMENSION; y++) {
 			for(int x = 0; x < DIMENSION; x++) {
-				out += estadoActual[y][x] == 1 ? 'x' : ' ';
+				out += this.estadoActual[y][x] == 1 ? 'x' : ' ';
 			}
 			out += '\n';
 		}
