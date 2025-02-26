@@ -14,6 +14,7 @@ License.
 
 package pr2;
 
+import java.io.*;
 import java.util.*;
 
 public class Graph<V> {
@@ -125,5 +126,64 @@ public class Graph<V> {
 			return path.reversed();
 		}
 		return null;
+	}
+
+	public static Graph<String> leerDeArchivo(String filename) {
+		File f = new File(filename);
+		if(!f.exists()) return null;
+
+		Graph<String> graph = new Graph<>();
+		try (FileReader fr = new FileReader(f)) {
+			int character = -2;
+			boolean readingCurrentNode = true;
+			String currentNode = "";
+			String adjacentNode = "";
+			while(character != -1) {
+				character = fr.read();
+
+				if(character == ' ') {
+					continue;
+				}
+				if(character == '\n' || character == '\r') {
+					if(!adjacentNode.isEmpty()) {
+						graph.addEdge(currentNode, adjacentNode);
+					}
+					currentNode = "";
+					adjacentNode = "";
+					readingCurrentNode = true;
+					continue;
+				}
+
+				if(character == '-') {
+					readingCurrentNode = false;
+					continue;
+				}
+				if (character == ',') {
+					if(!adjacentNode.isEmpty()) {
+						graph.addEdge(currentNode, adjacentNode);
+					}
+					adjacentNode = "";
+					continue;
+				}
+
+				if(character != -1) {
+					if (readingCurrentNode) {
+						currentNode += (char) character;
+					} else {
+						adjacentNode += (char) character;
+					}
+				}
+			}
+			if(!adjacentNode.isEmpty()) {
+				graph.addEdge(currentNode, adjacentNode);
+			}
+		} catch (FileNotFoundException e) {
+			// esta excepcion no es posible que ocurra porque se comprueba si el fichero existe en la segunda linea del metodo, pero en caso de que
+			// se llegue aqui, retornamos nulo
+			return null;
+		} catch (IOException e) {
+			return null;
+		}
+		return graph;
 	}
 }

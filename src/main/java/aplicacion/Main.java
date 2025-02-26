@@ -18,34 +18,34 @@ import dominio.Tablero;
 import mates.Matematicas;
 import pr2.Graph;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
 	public static void main(String[] args){
 		if(args.length == 0){
-			System.err.println("Error: El programa necesita por lo menos un parámetro para escoger la practica que ejecutar.");
+			System.err.println("Error: El programa necesita por lo menos un parámetro numérico (1, 2 o 3) para escoger la practica que ejecutar.");
 			System.exit(1);
 		}
 
 		switch(args[0]) {
 			case "1":
-				System.out.println("El número PI es " + Matematicas.
-					generarNumeroPi(Long.parseLong(args[1])));
+				if(args.length >= 2) {
+					System.out.println("El número PI es " + Matematicas.
+							generarNumeroPi(Long.parseLong(args[1])));
+				}else {
+					System.out.println("Necesitas aportar un número de pasos como segundo argumento.");
+				}
 				break;
 			case "2":
 				hacerConway();
 				break;
 			case "3":
-				Graph<Integer> g = new Graph<>();
-				g.addEdge(1, 2);
-				g.addEdge(3, 4);
-				g.addEdge(1, 5);
-				g.addEdge(5, 6);
-				g.addEdge(6, 4);
-				System.out.println("Grafo:");
-				System.out.println(g);
-				System.out.println("\nPath:");
-				g.onePath(1, 4).forEach(System.out::println);
+				if(args.length >= 3) {
+					hacerGrafo(args[1], args[2]);
+				}else {
+					System.out.println("Necestas aportar el nodo inicio y el nodo final como argumentos.");
+				}
 				break;
 			default:
 				break;
@@ -74,5 +74,17 @@ public class Main {
 		} catch (InterruptedException e) {
 			System.out.println(e);
 		}
+	}
+
+	public static void hacerGrafo(String nodoInicial, String nodoFinal) {
+		// TODO: Preguntar si las conexiones entre vertices tienen direccion.
+		// Por ahora asumimos que no tienen
+		Graph<String> g = Graph.leerDeArchivo("graph");
+		System.out.println("Grafo:");
+		System.out.println(g);
+		System.out.println("\nPath:");
+		List<String> path = g.onePath(nodoInicial, nodoFinal);
+		if(path != null) path.forEach(System.out::println);
+		else System.out.println("NO hay camino entre los nodos " + nodoInicial + " y " + nodoFinal);
 	}
 }
