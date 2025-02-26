@@ -56,7 +56,10 @@ public class Main {
 		try {
 			Tablero tablero = new Tablero();
 			System.out.println("SIMULACIÓN CON TABLERO LEÍDO");
-			tablero.leerEstadoActual();
+			if(!tablero.leerEstadoActual()) {
+				System.err.println("El fichero 'matriz' está malformado, revise que el fichero esté en el formato correcto.");
+				System.exit(1);
+			}
 			System.out.println(tablero);
 			for(int i = 0; i <= 5; i++) {
 				TimeUnit.SECONDS.sleep(1);
@@ -80,6 +83,10 @@ public class Main {
 		// TODO: Preguntar si las conexiones entre vertices tienen direccion.
 		// Por ahora asumimos que no tienen
 		Graph<String> g = Graph.leerDeArchivo("graph");
+		if(g == null) {
+			System.err.println("No se ha podido leer el archivo 'graph', revise si existe y si está en el formato correcto.");
+		}
+
 		System.out.println("Grafo:");
 		System.out.println(g);
 		System.out.println("\nPath:");

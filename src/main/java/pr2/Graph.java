@@ -95,6 +95,10 @@ public class Graph<V> {
 	 * ‘v2‘ pasando por arcos del grafo.
 	 */
 	public List<V> onePath(V v1, V v2) {
+		if(!this.adjacencyList.containsKey(v1) || !this.adjacencyList.containsKey(v2)) {
+			return null;
+		}
+
 		HashMap<V, V> traza = new HashMap<V, V>();
 		Stack<V> abierta = new Stack<>();
 		abierta.add(v1);

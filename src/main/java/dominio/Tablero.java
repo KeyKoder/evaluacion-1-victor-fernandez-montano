@@ -30,13 +30,17 @@ public class Tablero {
 	/**
 	 * Lee el estado inicial de un fichero llamado ‘matriz‘.
 	 */
-	public void leerEstadoActual() {
+	public boolean leerEstadoActual() {
+
 		int x = 0, y = 0;
 		this.estadoActual = new int[DIMENSION][DIMENSION];
 		try (FileReader fr = new FileReader(FILENAME)) {
 			int chat = fr.read();
 			while(chat != -1) {
-				if(chat == '\r') continue;
+				if(chat == '\r') {
+					chat = fr.read();
+					continue;
+				}
 				if(chat == '\n') {
 					x = 0;
 					y++;
@@ -51,6 +55,8 @@ public class Tablero {
 			}
 		} catch (IOException e) {
 			// Ignorar la excepcion y simplemente cargar ceros en la matriz
+		} catch (ArrayIndexOutOfBoundsException e) {
+			return false;
 		}
 		// Terminar de rellenar la matriz de ceros
 		while(y < DIMENSION) {
@@ -62,6 +68,7 @@ public class Tablero {
 			}
 		}
 		this.generarEstadoSiguiente();
+		return true;
 	}
 
 
