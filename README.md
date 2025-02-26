@@ -2,6 +2,29 @@
 Repositorio para el examen de evaluacion de la asignatura Técnicas de Programación
 
 ## Información para los usuarios
+
+### Como instalar
+
+Puedes utilizar el archivo ya compilado que se encuentra en la pestaña [Releases](https://github.com/KeyKoder/evaluacion-1-victor-fernandez-montano/releases) o compilarlo desde cero.
+
+Para compilarlo desde cero, sigue los siguientes pasos:
+
+1. Clona el repositorio
+
+    ```
+    git clone https://github.com/KeyKoder/evaluacion-1-victor-fernandez-montano.git
+    ```
+
+2. Utilizando Maven, ejecuta el siguiente comando
+
+    ```
+    mvn clean compile jar:jar
+    ```
+
+3. Navega a la carpeta `target`, donde debería de haber aparecido un archivo `.jar`. Ejecútalo desde la consola utilizando java.
+
+### Como utilizar
+
 Para utilizar el programa, si se ejecuta sin ningún parámetro se explicará lo que tiene que ir haciendo.
 
 En cualquier caso, se tiene que pasar como parámetro de consola el número de la práctica que se quiere probar.
@@ -78,6 +101,12 @@ Además, se tiene que aportar mediante los parámetros de consola el nodo inicia
 
 ## Información para los desarrolladores
 *Sección por completar*
+
+Para generar la documentación, ejecuta el siguiente goal de maven:
+
+```
+mvn javadoc:javadoc
+```
 
 ### Complejidad de los métodos
 En la clase `mates.Matematicas`, `n` se corresponde con el numero de pasos para calcular pi:
