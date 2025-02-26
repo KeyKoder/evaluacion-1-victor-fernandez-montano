@@ -17,11 +17,50 @@ package pr2;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class GraphTest {
+
+
+	@Test
+	public void testAdjacents() {
+		System.out.println("\nTest testAdjacents");
+		System.out.println("----------------------");
+		// Se construye el grafo.
+		Graph<Integer> g = new Graph<Integer>();
+		g.addEdge(1, 2);
+		g.addEdge(1, 3);
+
+		// Se construye el set de adyacencias esperado
+		Set<Integer> expectedAdjacents = new HashSet<Integer>();
+		expectedAdjacents.add(2);
+		expectedAdjacents.add(3);
+
+		// Se comprueba que los resultados sean los esperados
+		assertEquals(expectedAdjacents, g.obtainAdjacents(1));
+		assertNull(g.obtainAdjacents(4));
+	}
+
+
+	@Test
+	public void testContainsVertex() {
+		System.out.println("\nTest testContainsVertex");
+		// Se construye el grafo.
+		System.out.println("----------------------");
+		Graph<Integer> g = new Graph<Integer>();
+		g.addEdge(1, 2);
+		g.addEdge(1, 3);
+
+		// Se comprueba que los resultados sean los esperados
+		assertTrue(g.containsVertex(1));
+		assertTrue(g.containsVertex(2));
+		assertFalse(g.containsVertex(4));
+	}
+
 
 	/**
 	 * Este test comprueba que el metodo 'onePath(V v1, V v2)'

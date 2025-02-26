@@ -80,8 +80,6 @@ public class Main {
 	}
 
 	public static void hacerGrafo(String nodoInicial, String nodoFinal) {
-		// TODO: Preguntar si las conexiones entre vertices tienen direccion.
-		// Por ahora asumimos que no tienen
 		Graph<String> g = Graph.leerDeArchivo("graph");
 		if(g == null) {
 			System.err.println("No se ha podido leer el archivo 'graph', revise si existe y si está en el formato correcto.");
