@@ -5,6 +5,11 @@ Repositorio para el examen de evaluacion de la asignatura Técnicas de Programac
 
 ### Como instalar
 
+#### Prerequisitos
+* Java 23.0.1+
+
+#### Instalación
+
 Puedes utilizar el archivo ya compilado que se encuentra en la pestaña [Releases](https://github.com/KeyKoder/evaluacion-1-victor-fernandez-montano/releases) o compilarlo desde cero.
 
 Para compilarlo desde cero, sigue los siguientes pasos:
