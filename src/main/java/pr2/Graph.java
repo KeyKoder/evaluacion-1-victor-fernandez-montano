@@ -58,7 +58,7 @@ public class Graph<V> {
 	 * @param v vértice del que se obtienen los adyacentes.
 	 * @return conjunto de vértices adyacentes.
 	 */
-	public Set<V> obtainAdjacents(V v) throws Exception {
+	public Set<V> obtainAdjacents(V v) {
 		return this.adjacencyList.get(v);
 	}
 

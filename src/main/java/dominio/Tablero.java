@@ -156,7 +156,7 @@ public class Tablero {
 
 	/**
 	 * Devuelve, en modo texto, el estado actual.
-	 * @return el estado actual.
+	 * @return El estado actual.
 	 */
 	@Override
 	public String toString() {

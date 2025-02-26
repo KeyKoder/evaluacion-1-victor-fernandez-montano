@@ -17,7 +17,9 @@ package mates;
 public class Matematicas {
 	/**
 	 * Genera una aproximacion al número pi mediante el metodo de Montecarlo.
-	 * El parámetro 'pasos' indica el número de puntos generado.
+	 *
+	 * @param pasos El número de puntos a generar.
+	 * @return Una aproximación del número pi.
 	 */
 	public static double generarNumeroPi(long pasos){
 		int aciertos = 0;

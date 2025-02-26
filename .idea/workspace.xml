@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3d65fd4-461f-4b2e-8b56-a426145eab70" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/aplicacion/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aplicacion/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pr2/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pr2/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dominio/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dominio/Tablero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mates/Matematicas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mates/Matematicas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pr2/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pr2/GraphTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +28,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="MavenRunConfiguration" name="evaluacion-1-victor-fernandez-montano [org.apache.maven.plugins:maven-javadoc-plugin:3.10.1:javadoc]" />
+    </enabled-run-configurations>
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -38,6 +51,10 @@
     "Application.Main.executor": "Run",
     "Application.Mainaaa.executor": "Run",
     "JUnit.GraphTest.executor": "Run",
+    "Maven.evaluacion-1-victor-fernandez-montano [javadoc:javadoc].executor": "Run",
+    "Maven.evaluacion-1-victor-fernandez-montano [org.apache.maven.plugins:maven-javadoc-plugin:3.10.1:jar].executor": "Run",
+    "Maven.evaluacion-1-victor-fernandez-montano [org.apache.maven.plugins:maven-javadoc-plugin:3.10.1:javadoc].executor": "Run",
+    "Maven.evaluacion-1-victor-fernandez-montano [org.apache.maven.plugins:maven-javadoc-plugin:3.10.1:test-javadoc].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -67,6 +84,11 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="aplicacion" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn javadoc:javadoc" />
+    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -127,7 +149,8 @@
       <workItem from="1740433801998" duration="116000" />
       <workItem from="1740433977095" duration="11451000" />
       <workItem from="1740499897877" duration="2522000" />
-      <workItem from="1740511982669" duration="6271000" />
+      <workItem from="1740511982669" duration="6588000" />
+      <workItem from="1740563589466" duration="2873000" />
     </task>
     <servers />
   </component>
