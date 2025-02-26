@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b3d65fd4-461f-4b2e-8b56-a426145eab70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dominio/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dominio/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,6 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn javadoc:javadoc" />
       <command value="mvn clean compile javadoc:javadoc" />
       <command value="mvn clean compile jar:jar javadoc:javadoc" />
       <command value="mvn compile" />
@@ -93,6 +90,7 @@
       <command value="mvn compile jar:jar" />
       <command value="mvn clean" />
       <command value="mvn clean compile jar:jar" />
+      <command value="mvn javadoc:javadoc" />
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -156,7 +154,7 @@
       <workItem from="1740499897877" duration="2522000" />
       <workItem from="1740511982669" duration="6588000" />
       <workItem from="1740563589466" duration="7854000" />
-      <workItem from="1740579474601" duration="11324000" />
+      <workItem from="1740579474601" duration="12490000" />
     </task>
     <servers />
   </component>
