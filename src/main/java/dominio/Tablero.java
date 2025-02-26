@@ -21,7 +21,7 @@ import java.io.*;
  * estados e ir mostrando dichos estados.
  */
 public class Tablero {
-	private static int DIMENSION = 30;
+	private static final int DIMENSION = 30;
 	private int[][] estadoActual; //matriz que representa el estado actual.
 	private int[][] estadoSiguiente = new int[DIMENSION][DIMENSION];
 	private static final String FILENAME = "matriz";
