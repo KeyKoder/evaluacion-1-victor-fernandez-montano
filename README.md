@@ -6,7 +6,7 @@ Para utilizar el programa, si se ejecuta sin ningún parámetro se explicará lo
 
 En cualquier caso, se tiene que pasar como parámetro de consola el número de la práctica que se quiere probar.
 
-En el caso de la práctica 1, también tienes que pasar como parámetro la cantidad de puntos a generar para calcular PI.
+En el caso de la práctica 1, también tienes que pasar como parámetro la cantidad de puntos a generar para calcular pi.
 
 En el caso de la práctica 2, no necesitas parámetros extras, sin embargo, para modificar la configuración inicial se tiene que añadir o modificar el fichero 'matriz', que se tendría que encontrar
 en la misma carpeta que el ejecutable.
@@ -80,7 +80,45 @@ Además, se tiene que aportar mediante los parámetros de consola el nodo inicia
 *Sección por completar*
 
 ### Complejidad de los métodos
-*Sección por completar*
+En la clase `mates.Matematicas`, `n` se corresponde con el numero de pasos para calcular pi:
+
+`mates.Matematicas.generarNumeroPi`: `O(n)`
+
+`mates.RandomUtils.randomDouble`: `O(1)`
+
+---
+
+En `dominio.Tablero`, `n` se corresponde con las dimensiones del tablero:
+
+`dominio.Tablero.leerEstadoActual`: `O(n)`
+
+`dominio.Tablero.guardarEstadoActual`: `O(n^2)`
+
+`dominio.Tablero.generarEstadoActualPorMontecarlo`: `O(n^2)`
+
+`dominio.Tablero.transitarAlEstadoSiguiente`: `O(n^2)`
+
+`dominio.Tablero.generarEstadoSiguiente`: `O(n^2)`
+
+`dominio.Tablero.toString`: `O(n^2)`
+
+---
+
+En `pr2.Graph`, `n` se corresponde con los vértices del grafo:
+
+`pr2.Graph.addVertex`: `O(1)`
+
+`pr2.Graph.addEdge`: `O(1)`
+
+`pr2.Graph.obtainAdjacents`: `O(1)`
+
+`pr2.Graph.containsVertex`: `O(1)`
+
+`pr2.Graph.toString`: `O(n)`
+
+`pr2.Graph.onePath`: `O(n^2)` en el peor de los casos
+
+`pr2.Graph.leerDeArchivo`: `O(n)`
 
 ## Diagramas UML
 *Sección por completar*
