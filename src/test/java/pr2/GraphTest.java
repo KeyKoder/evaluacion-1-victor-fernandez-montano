@@ -24,8 +24,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class GraphTest {
 
 	/**
-	 * Este test comprueba que el método ‘onePath(V v1, V v2)‘
-	 * encuentra un camino entre ‘v1‘ y ‘v2‘ cuando existe.
+	 * Este test comprueba que el metodo 'onePath(V v1, V v2)'
+	 * encuentra un camino entre 'v1' y 'v2' cuando existe.
 	 */
 	@Test
 	public void onePathFindsAPath(){
@@ -46,5 +46,23 @@ class GraphTest {
 		expectedPath.add(4);
 		//Se comprueba si el camino devuelto es igual al esperado.
 		assertEquals(expectedPath, g.onePath(1, 4));
+	}
+
+	/**
+	 * Este test comprueba que el metodo 'onePath(V v1, V v2)'
+	 * retorna null cuando no encuentra un camino entre 'v1' y 'v2'.
+	 */
+	@Test
+	public void onePathDoesNotFindAPath(){
+		System.out.println("\nTest onePathDoesNotFindAPath");
+		System.out.println("----------------------");
+		// Se construye el grafo.
+		Graph<Integer> g = new Graph<>();
+		g.addEdge(1, 2);
+		g.addEdge(3, 4);
+		g.addEdge(1, 5);
+		g.addEdge(6, 4);
+		//Se comprueba si el camino devuelto es nulo
+		assertNull(g.onePath(1, 4));
 	}
 }
