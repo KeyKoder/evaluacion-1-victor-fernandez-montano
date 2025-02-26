@@ -18,7 +18,7 @@ import java.io.*;
 import java.util.*;
 
 public class Graph<V> {
-	private Map<V, Set<V>> adjacencyList = new HashMap<>();
+	private Map<V, Set<V>> adjacencyList = new HashMap<V, Set<V>>();
 
 	/**
 	 * Añade el vértice ‘v‘ al grafo.
@@ -100,7 +100,7 @@ public class Graph<V> {
 		}
 
 		HashMap<V, V> traza = new HashMap<V, V>();
-		Stack<V> abierta = new Stack<>();
+		Stack<V> abierta = new Stack<V>();
 		abierta.add(v1);
 		traza.put(v1, null);
 		boolean encontrado = false;
@@ -120,7 +120,7 @@ public class Graph<V> {
 			}
 		}
 		if(encontrado) {
-			List<V> path = new ArrayList<>();
+			List<V> path = new ArrayList<V>();
 			V current = v2;
 			path.add(current);
 			while(!current.equals(v1)) {
@@ -136,7 +136,7 @@ public class Graph<V> {
 		File f = new File(filename);
 		if(!f.exists()) return null;
 
-		Graph<String> graph = new Graph<>();
+		Graph<String> graph = new Graph<String>();
 		try (FileReader fr = new FileReader(f)) {
 			int character = -2;
 			boolean readingCurrentNode = true;

@@ -32,14 +32,14 @@ class GraphTest {
 		System.out.println("\nTest onePathFindsAPath");
 		System.out.println("----------------------");
 		// Se construye el grafo.
-		Graph<Integer> g = new Graph<>();
+		Graph<Integer> g = new Graph<Integer>();
 		g.addEdge(1, 2);
 		g.addEdge(3, 4);
 		g.addEdge(1, 5);
 		g.addEdge(5, 6);
 		g.addEdge(6, 4);
 		// Se construye el camino esperado.
-		List<Integer> expectedPath = new ArrayList<>();
+		List<Integer> expectedPath = new ArrayList<Integer>();
 		expectedPath.add(1);
 		expectedPath.add(5);
 		expectedPath.add(6);
@@ -57,7 +57,7 @@ class GraphTest {
 		System.out.println("\nTest onePathDoesNotFindAPath");
 		System.out.println("----------------------");
 		// Se construye el grafo.
-		Graph<Integer> g = new Graph<>();
+		Graph<Integer> g = new Graph<Integer>();
 		g.addEdge(1, 2);
 		g.addEdge(3, 4);
 		g.addEdge(1, 5);

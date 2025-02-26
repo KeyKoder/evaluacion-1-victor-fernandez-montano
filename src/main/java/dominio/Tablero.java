@@ -35,23 +35,23 @@ public class Tablero {
 		int x = 0, y = 0;
 		this.estadoActual = new int[DIMENSION][DIMENSION];
 		try (FileReader fr = new FileReader(FILENAME)) {
-			int chat = fr.read();
-			while(chat != -1) {
-				if(chat == '\r') {
-					chat = fr.read();
+			int character = fr.read();
+			while(character != -1) {
+				if(character == '\r') {
+					character = fr.read();
 					continue;
 				}
-				if(chat == '\n') {
+				if(character == '\n') {
 					x = 0;
 					y++;
-					chat = fr.read();
+					character = fr.read();
 					continue;
 				}
 
-				this.estadoActual[y][x] = chat == '0' ? 0 : 1;
+				this.estadoActual[y][x] = character == '0' ? 0 : 1;
 
 				x++;
-				chat = fr.read();
+				character = fr.read();
 			}
 		} catch (IOException e) {
 			// Ignorar la excepcion y simplemente cargar ceros en la matriz
