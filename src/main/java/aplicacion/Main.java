@@ -57,7 +57,7 @@ public class Main {
 			Tablero tablero = new Tablero();
 			System.out.println("SIMULACIÓN CON TABLERO LEÍDO");
 			if(!tablero.leerEstadoActual()) {
-				System.err.println("El fichero 'matriz' está malformado, revise que el fichero esté en el formato correcto.");
+				System.err.println("El fichero 'matriz' no existe o está malformado, revise que el fichero exista y esté en el formato correcto.");
 				System.exit(1);
 			}
 			System.out.println(tablero);
@@ -85,6 +85,7 @@ public class Main {
 		Graph<String> g = Graph.leerDeArchivo("graph");
 		if(g == null) {
 			System.err.println("No se ha podido leer el archivo 'graph', revise si existe y si está en el formato correcto.");
+			System.exit(1);
 		}
 
 		System.out.println("Grafo:");

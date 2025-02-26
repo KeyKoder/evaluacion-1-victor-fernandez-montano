@@ -54,7 +54,7 @@ public class Tablero {
 				character = fr.read();
 			}
 		} catch (IOException e) {
-			// Ignorar la excepcion y simplemente cargar ceros en la matriz
+			return false;
 		} catch (ArrayIndexOutOfBoundsException e) {
 			return false;
 		}
