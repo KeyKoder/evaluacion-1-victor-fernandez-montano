@@ -3,12 +3,10 @@ Repositorio para el examen de evaluacion de la asignatura Técnicas de Programac
 
 ## Información para los usuarios
 
-### Como instalar
-
-#### Prerequisitos
+### Prerequisitos
 * Java 23.0.1+
 
-#### Instalación
+### Instalación
 
 Puedes utilizar el archivo ya compilado que se encuentra en la pestaña [Releases](https://github.com/KeyKoder/evaluacion-1-victor-fernandez-montano/releases) o compilarlo desde cero.
 
@@ -105,8 +103,6 @@ Ambos formatos son equivalentes y corresponden al siguiente grafo:
 Además, se tiene que aportar mediante los parámetros de consola el nodo inicial y el nodo final del camino a calcular.
 
 ## Información para los desarrolladores
-*Sección por completar*
-
 Para generar la documentación, ejecuta el siguiente goal de maven:
 
 ```
@@ -154,5 +150,10 @@ En `pr2.Graph`, `n` se corresponde con los vértices del grafo:
 
 `pr2.Graph.leerDeArchivo`: `O(n)`
 
-## Diagramas UML
-*Sección por completar*
+## Diagrama UML
+![](assets/classDiagram.svg)
+
+---
+
+# Enlace al repositorio
+[https://github.com/KeyKoder/evaluacion-1-victor-fernandez-montano.git](https://github.com/KeyKoder/evaluacion-1-victor-fernandez-montano.git)

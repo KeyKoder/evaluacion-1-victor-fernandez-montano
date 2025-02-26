@@ -1,0 +1,50 @@
+@startuml
+
+class Matematicas {
+    +{method} generarNumeroPi(long pasos): double
+}
+
+class RandomUtils {
+    +{static} {method} randomDouble(double min, double max): double
+}
+
+class Tablero {
+    -{static} {field} DIMENSION: int
+    -{field} estadoActual: int[][]
+    -{field} estadoSiguiente: int[][]
+    -{static} {field} FILENAME: String
+    
+    +{method} leerEstadoActual(): boolean
+    +{method} guardarEstadoActual()
+    +{method} generarEstadoActualPorMontecarlo()
+    +{method} transitarAlEstadoSiguiente()
+    +{method} generarEstadoSiguiente()
+    +{method} toString(): String
+    
+}
+
+class Graph<V> {
+    -{field} adjacencyList: Map<V, Set<V>>
+    +{method} addVertex(V v): boolean
+    +{method} addEdge(V v1, V v2): boolean
+    +{method} obtainAdjacents(V v): Set<V>
+    +{method} addVertex(V v): boolean
+    +{method} containsVertex(V v): boolean
+    +{method} toString(): String
+    +{method} onePath(V v1, V v2): List<V>
+}
+
+class Main {
+    +{static} {method} main(String[] args)
+    +{static} {method} hacerConway()
+    +{static} {method} hacerGrafo(String nodoInicial, String nodoFinal)
+}
+
+
+
+Matematicas <-- Main
+RandomUtils <-- Matematicas
+Tablero <-- Main
+Graph <-- Main
+
+@enduml
