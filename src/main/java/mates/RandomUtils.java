@@ -15,6 +15,13 @@ License.
 package mates;
 
 public class RandomUtils {
+
+	/**
+	 * Genera un double aleatorio en el rango especificado.
+	 * @param min El valor minimo del double a generar (inclusivo)
+	 * @param max El valor minimo del double a generar (exclusivo)
+	 * @return Un numero aleatorio en el rango [min, max)
+	 */
 	public static double randomDouble(double min, double max) {
 		return (Math.random() * (max - min)) + min;
 	}
